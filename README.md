@@ -8,6 +8,31 @@ It is built on an **everything-is-a-plugin** architecture and powered by [Cordis
 
 Documentation: [https://deepseek-harness.github.io/deepseek-harness/](https://deepseek-harness.github.io/deepseek-harness/)
 
+## What it does
+
+DeepSeek Harness runs configurable AI agents that can inspect and edit workspace files, execute shell commands, search and fetch web content, and delegate work to subagents. Sessions retain durable history so users can resume work and review what happened.
+
+Profiles package these capabilities for an interactive Web UI, one-shot headless tasks, TypeScript and Python SDK integrations, or ACP automation clients. Plugins let teams select models, tools, execution providers, and permission policies; the [architecture guide](docs/architecture.md) explains how those pieces compose.
+
+## Typical use cases
+
+- **Repository development:** understand a codebase, edit files, run checks, and coordinate multi-step changes in a workspace.
+- **Research and knowledge work:** search and fetch web content, or connect external services through MCP within a durable session.
+- **Workflow integration:** run one-off tasks from a terminal or script, embed an agent through an SDK, or connect an ACP automation host.
+- **Purpose-built agents:** compose profiles and plugins around the models, tools, and execution policies a workflow requires.
+
+## Choose an entry point
+
+| Entry point | Best fit |
+|---|---|
+| Web UI | Interactive sessions with a browser-based workspace and settings. |
+| Headless profile | One-shot tasks from a terminal or automation job. |
+| TypeScript or Python SDK | Integrating agent sessions into an application. See the [Python SDK guide](docs/user/guide/python-sdk.md). |
+| ACP profile | Connecting automation clients through the Agent Client Protocol. |
+| Desktop app | Using the packaged desktop application. |
+
+Tool access and execution are governed by the selected profile's configuration, sandbox, and approval policy. Read the [safety notice](SAFETY.md) before running DSH.
+
 ## Developer preview
 
 DeepSeek Harness is in _developer preview_ and iterating rapidly. **THERE WILL BE COMPATIBILITY-BREAKING CHANGES.**

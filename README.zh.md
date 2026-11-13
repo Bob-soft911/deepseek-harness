@@ -8,6 +8,31 @@ DeepSeek Harness（`dsh`）是由 [DeepSeek AI](https://deepseek.com) 开发的�
 
 文档：[https://deepseek-harness.github.io/deepseek-harness/](https://deepseek-harness.github.io/deepseek-harness/)
 
+## 项目功能
+
+DeepSeek Harness 可运行可配置的 AI Agent，用于检查和编辑工作区文件、执行 Shell 命令、搜索和获取网页内容，也可以把任务委派给子 Agent。会话会持久保存历史记录，方便用户继续工作和回顾过程。
+
+不同 Profile 为这些能力提供不同入口：交互式 Web UI、一次性无界面任务、TypeScript 和 Python SDK 集成，或通过 ACP 接入自动化客户端。插件支持按需选择模型、工具、执行提供方和权限策略；[架构指南](docs/architecture.zh.md)介绍这些部分如何组合。
+
+## 典型使用场景
+
+- **代码库开发：**理解项目代码、编辑文件、运行检查，并在工作区内协同处理多步骤改动。
+- **研究与知识工作：**在持久会话中搜索和获取网页内容，或通过 MCP 连接外部服务。
+- **工作流集成：**从终端或脚本运行一次性任务，通过 SDK 将 Agent 接入应用，或连接 ACP 自动化宿主。
+- **专用 Agent：**围绕工作流所需的模型、工具和执行策略组合 Profile 与插件。
+
+## 选择使用入口
+
+| 入口 | 适用场景 |
+|---|---|
+| Web UI | 通过浏览器工作区和设置进行交互式会话。 |
+| Headless Profile | 从终端或自动化任务运行一次性工作。 |
+| TypeScript 或 Python SDK | 将 Agent 会话集成到应用中。详见 [Python SDK 指南](docs/user/guide/python-sdk.zh.md)。 |
+| ACP Profile | 通过 Agent Client Protocol 连接自动化客户端。 |
+| Desktop 应用 | 使用打包的桌面应用。 |
+
+工具访问和执行行为由所选 Profile 的配置、沙箱和审批策略控制。运行 DSH 前请阅读[安全说明](SAFETY.zh.md)。
+
 ## 开发者预览
 
 DeepSeek Harness 处于 _开发者预览_ 阶段，正在快速迭代。**未来将出现破坏兼容性的变更。**
